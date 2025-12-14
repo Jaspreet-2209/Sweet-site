@@ -60,7 +60,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
 // Tour Custom Tooltip Component
 const CustomTooltip = ({ continuous, index, step, primaryProps, skipProps, tooltipProps }) => {
   const quotes = [
-    "Welcome to SweetTooth! 🍬 Where every craving finds its match!",
+    "Welcome to SweetTooth! Where every craving finds its match!",
     "A hero section that's sweeter than dessert! Life's too short for boring websites.",
     "Find your perfect treat! Search works like magic - just type and watch the sweets appear.",
     "Your gateway to sweet adventures! Sign in to unlock all features.",
@@ -109,7 +109,7 @@ const CustomTooltip = ({ continuous, index, step, primaryProps, skipProps, toolt
             {...primaryProps}
             className="px-6 py-2 bg-gradient-to-r from-rose-500 to-purple-600 text-white rounded-full font-medium hover:shadow-lg transition shadow-rose-200"
           >
-            {continuous ? (index === 6 ? "Finish Tour 🎉" : "Next") : "Close"}
+            {continuous ? (index === 6 ? "Finish Tour " : "Next") : "Close"}
           </button>
         </div>
       </div>
@@ -205,7 +205,7 @@ export default function App() {
   const tourSteps = [
     {
       target: 'body',
-      title: 'Welcome to SweetTooth! 🍭',
+      title: 'Welcome to SweetTooth! ',
       content: 'Let me guide you through our sweet wonderland. Discover how to find, purchase, and manage delicious desserts!',
       placement: 'center',
       disableBeacon: true,
