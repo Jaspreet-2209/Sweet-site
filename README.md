@@ -1,20 +1,20 @@
-# 🍬 SweetTooth – Full Stack MERN Dessert Shop
+# SweetTooth – Full Stack MERN Dessert Shop
 
 SweetTooth is a full-stack MERN (MongoDB, Express, React, Node.js) application that allows users to explore, search, and purchase sweets, while administrators can securely manage inventory.  
 The project demonstrates real-world full-stack development practices such as authentication, authorization, protected APIs, role-based access, and a modern, interactive UI.
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
-Frontend & Backend deployed on Render  
-🔗 https://sweet-site.onrender.com
+Frontend & Backend deployed on Vercel  
+https://sweet-site.vercel.app/
 
 ---
 
-## ✨ Features
+## Features
 
-### 👤 User Features
+### User Features
 - User registration and login with JWT authentication
 - Browse all available sweets
 - Search sweets by name or description
@@ -23,7 +23,7 @@ Frontend & Backend deployed on Render
 - Sold-out product handling with UI indicators
 - Guided product tour using React Joyride
 
-### 🔐 Admin Features
+###  Admin Features
 - Role-based access control (User / Admin)
 - Add new sweets
 - Edit existing sweets
@@ -31,7 +31,7 @@ Frontend & Backend deployed on Render
 - Restock inventory
 - Admin-only protected routes and UI controls
 
-### 🎨 UI / UX Features
+###  UI / UX Features
 - Modern, responsive UI using React and Tailwind CSS
 - Toast notifications for success and error states
 - Modal-based authentication and admin forms
@@ -62,7 +62,7 @@ Frontend & Backend deployed on Render
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 SweetTooth/
 ├── frontend/
@@ -81,9 +81,9 @@ SweetTooth/
 ---
 <img width="1903" height="909" alt="image" src="https://github.com/user-attachments/assets/eb200426-5ba4-4447-b2c6-9734b6ec1b43" />
 
-## ⚙️ Local Setup Instructions
+## Local Setup Instructions
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 ```bash
 git clone https://github.com/Jaspreet-2209/Sweet-site.git
 cd sweettooth
