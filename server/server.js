@@ -85,52 +85,6 @@ const isAdmin = (req, res, next) => {
 
 // 1. AUTH ROUTES
 // POST /api/auth/register
-app.post('/api/auth/register', async (req, res) => {
-  try {
-    const { email, password, name, role } = req.body;
-    
-    // Check if user exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) return res.status(400).json({ message: 'User already exists' });
-
-    // Create new user (allow role setting for demo purposes, restrict in prod)
-    const user = new User({ email, password, name, role: role || 'user' });
-    await user.save();
-
-    res.status(201).json({ message: 'User registered successfully' });
-  } catch (error) {
-    res.status(500).json({ message: 'Server Error', error: error.message });
-  }
-});
-
-// POST /api/auth/login
-app.post('/api/auth/login', async (req, res) => {
-  try {
-    const { email, password } = req.body;
-
-    // Find user
-    const user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ message: 'Invalid credentials' });
-
-    // Check password
-    const isMatch = await user.comparePassword(password);
-    if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
-
-    // Generate Token
-    const token = jwt.sign(
-      { id: user._id, role: user.role, email: user.email }, 
-      JWT_SECRET, 
-      { expiresIn: '1h' }
-    );
-
-    res.json({ 
-      token, 
-      user: { id: user._id, name: user.name, email: user.email, role: user.role } 
-    });
-  } catch (error) {
-    res.status(500).json({ message: 'Server Error', error: error.message });
-  }
-});
 
 // 2. SWEETS ROUTES
 
