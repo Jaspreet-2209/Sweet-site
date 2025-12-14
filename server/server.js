@@ -17,8 +17,8 @@ app.use(express.json()); // Parse JSON bodies
 
 // --- DATABASE CONNECTION ---
 mongoose.connect(MONGO_URI)
-  .then(() => console.log('✅ MongoDB Connected'))
-  .catch(err => console.error('❌ MongoDB Connection Error:', err));
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.error('MongoDB Connection Error:', err));
 
 // --- MODELS ---
 
@@ -255,5 +255,5 @@ app.post('/api/sweets/:id/restock', authenticateToken, isAdmin, async (req, res)
 
 // --- SERVER START ---
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
