@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import Joyride, { STATUS, EVENTS } from 'react-joyride';
 
-const API_BASE = 'https://sweet-site.onrender.com';
+const API_BASE = 'https://sweet-site.onrender.com/api';
 
 // --- COMPONENTS ---
 
