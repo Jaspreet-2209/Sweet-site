@@ -189,7 +189,19 @@ app.post('/api/sweets', authenticateToken, isAdmin, async (req, res) => {
 });
 
 // PUT /api/sweets/:id (Protected, Admin Only) - Update sweet
-
+app.put('/api/sweets/:id', authenticateToken, isAdmin, async (req, res) => {
+  try {
+    const updatedSweet = await Sweet.findByIdAndUpdate(
+      req.params.id, 
+      req.body, 
+      { new: true, runValidators: true } // Return updated doc, run validations
+    );
+    if (!updatedSweet) return res.status(404).json({ message: 'Sweet not found' });
+    res.json(updatedSweet);
+  } catch (error) {
+    res.status(400).json({ message: 'Error updating sweet', error: error.message });
+  }
+});
 
 // DELETE /api/sweets/:id (Protected, Admin Only) - Delete sweet
 app.delete('/api/sweets/:id', authenticateToken, isAdmin, async (req, res) => {
