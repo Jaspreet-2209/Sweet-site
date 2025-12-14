@@ -271,40 +271,7 @@ export default function App() {
     setToast({ message, type });
   };
 
-  const handleAuth = async (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const email = formData.get('email');
-    const password = formData.get('password');
-    const endpoint = authMode === 'login' ? '/auth/login' : '/auth/register';
-
-    try {
-      const res = await fetch(`${API_BASE}${endpoint}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, name: 'User' }) // name is optional/mocked here
-      });
-
-      const data = await res.json();
-      
-      if (!res.ok) throw new Error(data.message || 'Auth failed');
-
-      if (authMode === 'login') {
-        setToken(data.token);
-        setUser(data.user);
-        localStorage.setItem('jwt_token', data.token);
-        localStorage.setItem('current_user', JSON.stringify(data.user));
-        showToast(`Welcome back, ${data.user.name}!`);
-        setIsAuthOpen(false);
-      } else {
-        showToast('Account created! Please log in.');
-        setAuthMode('login');
-      }
-    } catch (err) {
-      showToast(err.message, 'error');
-    }
-  };
-
+  
   const handleLogout = () => {
     setUser(null);
     setToken(null);
