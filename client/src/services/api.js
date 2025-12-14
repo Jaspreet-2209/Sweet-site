@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://sweet-site.onrender.com",
+  baseURL: "https://sweet-site.onrender.com/api",
 });
 
 API.interceptors.request.use((req) => {
@@ -13,4 +13,5 @@ API.interceptors.request.use((req) => {
 });
 
 export default API;
+
 
